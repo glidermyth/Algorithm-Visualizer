@@ -6,13 +6,14 @@
     box-sizing: border-box;
 }
 
-:root{
-    --nav-color:#54426B;
-    --btn-color-primary:#623CEA;
-    --bg-color:#E9F1F7;
-    --btn-color-secondary:#0892A5;
-    --hover-color:#507DBC;
-    --para-color:#3B6064;
+:root {
+    --nav-color: #54426B;
+    --btn-color-primary: #623CEA;
+    --bg-color: #E9F1F7;
+    --btn-color-secondary: #0892A5;
+    --hover-color: #507DBC;
+    --para-color: #3B6064;
+    --card-color: #E7E7E7;
 }
 
 body {
@@ -24,45 +25,45 @@ body {
 =============================================*/
 
 .navbar {
-    width:100%;
-    height:10vh;
+    width: 100%;
+    height: 10vh;
     background-color: var(--nav-color);
-    display:flex;
+    display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
 .logo {
-    flex-grow:1;
-    display:flex;
+    flex-grow: 1;
+    display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
 .logo>p {
-    color:white;
-    font-size:1.4rem;
+    color: white;
+    font-size: 1.4rem;
 }
 
 .links {
-    flex-grow:3;
+    flex-grow: 3;
 }
 
 .links>ul {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: space-evenly;
     list-style-type: none;
 }
 
 .a-link {
-    text-decoration:none;
-    color:white;
-    font-size:1.2rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
 }
 
 .a-link:hover {
-    border-bottom:2px solid white;
+    border-bottom: 2px solid white;
 }
 
 /*=============================================
@@ -79,42 +80,152 @@ body {
     hero-section styles starts
 =============================================*/
 
-.hero-section{
-    width:60%;
-    height:45vh;
-    margin:0 auto;
-    display:flex;
+.hero-section {
+    width: 60%;
+    height: 45vh;
+    margin: 0 auto;
+    display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .hero-text {
-    flex-grow:1;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    
+
 }
 
 .heading-para {
-    color:var(--para-color);
+    color: var(--para-color);
     font-size: 1.08rem;
 }
 
-.hero-image{
-    flex-grow:2;
+.hero-image {
+    flex-grow: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
-.hero-image img{
-    height:300px;
-    width:300px;
+.hero-image img {
+    height: 300px;
+    width: 300px;
 }
 
 
 /*=============================================
     hero-section styles ends
+=============================================*/
+
+/*=============================================
+    topic-cards styles starts
+=============================================*/
+
+.topic-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.topic-text {
+    margin:1.5rem 0;
+    font-size:1.5rem;
+    font-weight: 500;
+}
+
+.topic-text>p {
+    text-decoration: underline;
+}
+
+.cards-grid {
+    width:100%;
+    height:80vh;
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows:auto auto;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+/*=============================================
+    card styles starts
+=============================================*/
+
+.card {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    background-color: var(--card-color);
+    height:250px;
+    width:262px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.card-hover {
+    position:absolute;
+    height:250px;
+    width:262px;
+    background:var(--hover-color);
+    opacity: 0;
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-size:1.2rem;
+    cursor:pointer;
+    transition:opacity 0.3s ease;
+}
+
+.card-hover:hover{
+    opacity:0.7;
+}
+
+.card-image>img {
+    width:262px;
+    height:171px;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-text {
+    margin-bottom:1rem;
+}
+
+.card-text>p {
+    font-size:1.2rem;
+}
+
+/*=============================================
+    card styles ends
+=============================================*/
+/*=============================================
+    topic-cards styles ends
+=============================================*/
+
+/*=============================================
+    footer styles starts
+=============================================*/
+
+.footer {
+    height:10vh;
+    width:100%;
+    background-color:var(--nav-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color:white;
+}
+
+
+/*=============================================
+    footer styles ends
 =============================================*/
