@@ -49,8 +49,8 @@
 }
 
 .btn:hover {
-    box-shadow:2px 3px 5px 0 rgba(17,138,178,0.4),
-                -2px -3px 5px 0 rgba(6,214,160,0.4);
+    box-shadow:4px 4px 5px 0 rgba(17,138,178,0.4),
+                -4px -4px 5px 0 rgba(6,214,160,0.4);
 }
 
 .canvas {
@@ -58,6 +58,9 @@
     height:60vh;
     border:2px solid #073B4C;
     margin:0 auto;
+    display:flex;
+    align-items: flex-end;
+    justify-content: center;
 } 
 
 .sorting-buttons {
@@ -68,4 +71,13 @@
     grid-template-columns: auto auto auto auto auto;
     justify-content: space-evenly;
     align-content: center;
+}
+
+.canvas-span-element {
+    /* height:20px;
+    width:20px; */
+    background:#073B4C;
+    border:1px solid white;
+    display:inline-block;
+    margin:0 0.3rem;
 }
