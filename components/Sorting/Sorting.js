@@ -5,6 +5,7 @@ const input_field = document.querySelector("#num-array");
 const input_btn = document.querySelector(".input-btn");
 const canvas = document.querySelector(".canvas");
 const bubbleSort = document.querySelector(".bubbleSort");
+const display = document.querySelector(".display");
 
 //  variables and arrays
 
@@ -66,6 +67,11 @@ input_btn.addEventListener("click",()=>{
 
 //  Implementing bubble sort algorithm and adding click event to the button
 bubbleSort.addEventListener("click",(event)=>{
+
+    let p = document.createElement("p");
+    p.textContent = 'Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order. This algorithm is not suitable for large data sets as its average and worst case time complexity is quite high.';
+    display.append(p);
+
     let canvasChildren = canvas.children;
     // console.dir(canvasChildren);
     let counter = 1;
@@ -113,4 +119,8 @@ bubbleSort.addEventListener("click",(event)=>{
         }
         counter++;
     }
+
+    setTimeout(()=>{
+        display.firstElementChild.remove();
+    },time+=700);
 });
