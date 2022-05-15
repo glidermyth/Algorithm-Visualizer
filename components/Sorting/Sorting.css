@@ -8,6 +8,7 @@
 
 :root {
     --btn-color:linear-gradient(to right,#118AB2,#06D6A0);
+    --btn-color-secondary:linear-gradient(to right,#7900FF,#E15FED);
 }
 
 .main-body {
@@ -31,26 +32,27 @@
     border-radius:0.3rem;
     border:0;
     outline:#073B4C solid 1px;
-    font-size:1.25rem;
+    font-size:1.15rem;
     padding:0.3rem;
 }
 
 .btn {
-    font-size:1.235rem;
+    font-size:1.135rem;
     color:#fff;
     padding:0.5rem;
     width:6rem;
     border-radius: 0.35rem;
     border:0;
-    background:linear-gradient(to right,#118AB2,#06D6A0);
+    /* background:linear-gradient(to right,#118AB2,#06D6A0); */
+    background:var(--btn-color-secondary);
     cursor:pointer;
     box-shadow:0;
     transition:all 0.3s ease;
 }
 
 .btn:hover {
-    box-shadow:4px 4px 5px 0 rgba(17,138,178,0.4),
-                -4px -4px 5px 0 rgba(6,214,160,0.4);
+    box-shadow:4px 4px 5px 0 rgba(17,138,178,0.75),
+                -4px -4px 5px 0 rgba(6,214,160,0.75);
 }
 
 .canvas {
@@ -74,10 +76,13 @@
 }
 
 .canvas-span-element {
-    /* height:20px;
-    width:20px; */
-    background:#073B4C;
+    width:25px;
+    min-height:30px;
+    background:#7900FF;
     border:1px solid white;
     display:inline-block;
     margin:0 0.3rem;
+    color:#fff;
+    font-size:1.08rem;
+    font-weight: 500;
 }
