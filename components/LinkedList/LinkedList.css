@@ -38,6 +38,22 @@ body {
     height:5vh;
     background-color:var(--header-color);
 }
+.linkedList-into-text{
+    grid-column-start:1;
+    grid-column-end:4;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border-top:2px solid var(--border-color);
+    border-bottom:2px solid var(--border-color);
+    margin-top:0.3rem;
+    min-width:90%;
+    width:90%;
+    justify-self: center;
+}
 
 .linkedList{
     grid-column-start: 1;
@@ -63,7 +79,7 @@ body {
     display:inline-block;
     min-width:5%;
     width:5%;
-    height:90%;
+    height:80%;
     background:var(--btn-color);
     color:white;
     text-align:center;
@@ -117,8 +133,8 @@ body {
     color:white;
     font-size:1.05rem;
     box-shadow:0;
-    margin-top:0.7rem;
-    margin-bottom:0.7rem;
+    margin-top:0.4rem;
+    margin-bottom:0.4rem;
     cursor:pointer;
     transition: box-shadow 0.35s ease-in-out;
 }
