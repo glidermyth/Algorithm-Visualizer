@@ -16,7 +16,8 @@
 .main-body {
     width: 100vw;
     height: 100vh;
-    background-color: #E6FDFF;
+    /* background-color: #E6FDFF; */
+    background: #F2F2F2;
 }
 
 .input {
@@ -124,6 +125,6 @@
     display: inline-block;
     margin: 0 0.15rem;
     color: #fff;
-    font-size: 1.08rem;
+    font-size: 1.2rem;
     font-weight: 500;
 }
