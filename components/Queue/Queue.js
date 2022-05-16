@@ -5,6 +5,8 @@ const deleteBtn = document.querySelector(".Delete");
 const frontBtn = document.querySelector(".Front");
 const backBtn = document.querySelector(".Back");
 const isEmptyBtn = document.querySelector(".is-empty");
+const generateRandom = document.querySelector(".generate-random");
+const flush = document.querySelector(".flush");
 const inputField = document.querySelector("#data-field");
 
 //  adding event listeners to buttons
@@ -116,4 +118,50 @@ isEmptyBtn.addEventListener("click",(event)=>{
     setTimeout(()=>{
         display.lastElementChild.remove();
     },2500);
+});
+
+generateRandom.addEventListener("click",(event)=>{
+    let queueChildrenLength = queue.children.length;
+    for(let i=0;i<queueChildrenLength;i++)
+    {
+        queue.firstElementChild.remove();
+    }
+    for(let i = 0;i<20;i++)
+    {
+        let dataVal = Math.floor(Math.random() * (i+11));
+        let span = document.createElement("span");
+        span.innerText = dataVal;
+        queue.append(span);
+    }
+    let p = document.createElement("p");
+    p.innerText = `Data Generated successfully😁`;
+    display.append(p);
+    setTimeout(()=>{
+        display.lastElementChild.remove();
+    },2000);
+});
+
+flush.addEventListener("click",(event)=>{
+    let queueChildrenLength = queue.children.length;
+    if(queueChildrenLength == 0)
+    {
+        let p = document.createElement("p");
+        p.innerText = `Queue has no element🙄🙄`;
+        display.append(p);
+        setTimeout(()=>{
+            display.lastElementChild.remove();
+        },2000);
+    }
+    else{
+        for(let i=0;i<queueChildrenLength;i++)
+        {
+            queue.firstElementChild.remove();
+        }
+        let p = document.createElement("p");
+        p.innerText = `Queue flushed successfully😊😊😊`;
+        display.append(p);
+        setTimeout(()=>{
+            display.lastElementChild.remove();
+        },2000);
+    }
 });
