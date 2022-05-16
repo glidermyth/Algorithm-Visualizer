@@ -2,18 +2,20 @@
 //initialization
 
 const input_field = document.querySelector("#num-array");
+const randomData = document.querySelector("#random-data");
 const input_btn = document.querySelector(".input-btn");
 const canvas = document.querySelector(".canvas");
 const bubbleSort = document.querySelector(".bubbleSort");
 const insertionSort = document.querySelector(".insertionSort");
 const selectionSort = document.querySelector(".selectionSort");
 const display = document.querySelector(".display");
+const randomBtn = document.querySelector(".random-number");
 
 //  variables and arrays
 
 let numArray = [];
-const minHeight = 30;
-const minElemHeight = 12;
+const minHeight = 100;
+const minElemHeight = 5;
 
 
 //  function to change input string to array of integers
@@ -100,18 +102,18 @@ bubbleSort.addEventListener("click", (event) => {
                 }
                 canvasChildren[i].textContent = val1;
                 canvasChildren[i + 1].textContent = val2;
-            }, time += 700);
+            }, time += 200);
             setTimeout(() => {
                 canvasChildren[i].style.backgroundColor = spanColor;
                 canvasChildren[i + 1].style.backgroundColor = spanColor;
-            }, time += 700);
+            }, time += 200);
         }
         counter++;
     }
 
     setTimeout(() => {
         display.firstElementChild.remove();
-    }, time += 700);
+    }, time += 200);
 });
 
 //  Implementing insertion sort algorithm and adding click event to the button
@@ -122,25 +124,31 @@ bubbleSort.addEventListener("click", (event) => {
 //     let time = 0;
 //     let spanColor = "#7900FF";
 //     let spanCmpColor = "#FF6363";
+//     let matchColor = "#83BD75";
 
-//     for(let i=1;i<canvasChildren.length;i++)
+//     for(let i=0;i<canvasChildren.length;i++)
 //     {
-//         let keyVal = parseInt(canvasChildren[i].textContent);
-//         // console.log(keyVal);
-//         let prevVal = parseInt(canvasChildren[i-1].textContent);
-//         let j = i;
-//         while(j>0 && prevVal>keyVal)
+//         let j = i+1;
+//         let val = canvasChildren[j].textContent;
+
+//         let p = document.createElement("p");
+//         p.textContent = `The Key Value is: ${val}`;
+//         display.append(p);
+
+//         while(j>0 && (parseInt(val) < parseInt(canvasChildren[j-1].textContent)))
 //         {
 //             setTimeout(()=>{
-//                 canvasChildren[j].textContent = prevVal;
+//                 // canvasChildren[j].style.backgroundColor = spanCmpColor;
+//                 // canvasChildren[j-1].style.backgroundColor = spanCmpColor;
+//                 canvasChildren[j].textContent = canvasChildren[j-1].textContent;
 //                 j--;
-//                 prevVal = parseInt(canvasChildren[j-1].textContent);
-//                 canvasChildren[j].style.backgroundColor = spanCmpColor;
 //             },time+=700);
+//             // setTimeout(()=>{
+//             //     canvasChildren[j].style.backgroundColor = spanColor;
+//             //     canvasChildren[j-1].style.backgroundColor = spanColor;
+//             // },time+=700);
 //         }
-//         setTimeout(()=>{
-//             canvasChildren[j].textContent = keyVal;
-//         },time+=700);
+//         canvasChildren[j].textContent = val;
 //     }
 // });
 
@@ -148,8 +156,12 @@ selectionSort.addEventListener("click",(event)=>{
     let canvasChildren = canvas.children;
     let time = 0;
     let spanColor = "#7900FF";
-    let spanCmpColor = "#FF6363";
-    let matchColor = "#83BD75";
+    let spanCmpColor = "#83BD75";
+    let matchColor = "#FF6363";
+
+    let p = document.createElement("p");
+    p.textContent = 'Selection sort is a simple sorting algorithm. This sorting algorithm is an in-place comparison-based algorithm in which the list is divided into two parts, the sorted part at the left end and the unsorted part at the right end. Initially, the sorted part is empty and the unsorted part is the entire list.';
+    display.append(p);
 
     for(let i=0;i<canvasChildren.length -1;i++)
     {
@@ -180,11 +192,61 @@ selectionSort.addEventListener("click",(event)=>{
                         canvasChildren[i].style.height = 0;
                     }
                 }
-            },time+=700);
+            },time+=200);
             setTimeout(()=>{
                 canvasChildren[i].style.backgroundColor = spanColor;
                 canvasChildren[j].style.backgroundColor = spanColor;
-            },time+=700)
+            },time+=200)
         }
     }
+
+    setTimeout(()=>{
+        display.firstElementChild.remove();
+    },time+=200);
+});
+
+randomBtn.addEventListener("click",(event)=>{
+    numArray = [];
+    let canvasChildCount = canvas.childElementCount;
+    for(let i=0;i<canvasChildCount;i++)
+    {
+        canvas.firstElementChild.remove();  
+    }
+
+    let dataCount = parseInt(randomData.value);
+    let loopLength = 0;
+    if(dataCount>60)
+    {
+        let p = document.createElement("p");
+        p.textContent = `The canvas can only contain at max 60 element.`;
+        display.append(p);
+        setTimeout(()=>{
+            display.firstElementChild.remove();
+        },2000);
+        loopLength = 60;
+    }
+    else if(dataCount<=0 || randomData.value == "")
+    {
+        let p = document.createElement("p");
+        p.textContent = `Element count can not be zero,negative or empty`;
+        display.append(p);
+        setTimeout(()=>{
+            display.firstElementChild.remove();
+        },2000);
+    }
+    else
+    {
+        loopLength = dataCount;
+    }
+
+    for(let i=1;i<=loopLength;i++)
+    {
+        let num = (Math.floor(Math.random() * (i+11)));
+        if(num > 0)
+        {
+            numArray.push(num);
+        }
+    }
+    console.log(numArray);
+    createSpan();
 });
