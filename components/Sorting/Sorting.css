@@ -88,7 +88,7 @@
     background: var(--btn-color-secondary);
     cursor: pointer;
     box-shadow: 0;
-    transition: all 0.3s ease;
+    transition: box-shadow 0.257s ease-in-out;
 }
 
 .btn:hover {

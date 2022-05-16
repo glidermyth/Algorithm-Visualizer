@@ -205,6 +205,7 @@ selectionSort.addEventListener("click",(event)=>{
     },time+=200);
 });
 
+//  implementing randomly generate span button for canvas;
 randomBtn.addEventListener("click",(event)=>{
     numArray = [];
     let canvasChildCount = canvas.childElementCount;

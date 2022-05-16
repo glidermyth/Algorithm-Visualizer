@@ -3,6 +3,7 @@ const display = document.querySelector(".display-container");
 const pushBtn = document.querySelector(".push");
 const popBtn = document.querySelector(".pop");
 const topBtn = document.querySelector(".top");
+const generateRandom = document.querySelector(".generate-random");
 const isEmptyBtn = document.querySelector(".is-empty");
 const inputField = document.querySelector("#data-field");
 
@@ -106,4 +107,29 @@ isEmptyBtn.addEventListener("click",(event)=>{
             display.lastElementChild.remove();
         },4000);
     }
+});
+
+generateRandom.addEventListener("click",(event)=>{
+    stackArr = [];
+    Top = -1;
+    let stackElemCount = stack.children.length;
+    for(let i = 0;i<stackElemCount;i++)
+    {
+        stack.firstElementChild.remove();
+    }
+    for(let i=0;i<size;i++)
+    {
+        let dataVal = Math.floor(Math.random() * (i+12));
+        stackArr.push(dataVal);
+        let span = document.createElement("span");
+        span.innerText = dataVal;
+        stack.prepend(span);
+        Top++;
+    }
+    let p1 = document.createElement("p");
+    p1.innerText = `Data generated successfully😉`;
+    display.appendChild(p1);
+    setTimeout(()=>{
+        display.lastElementChild.remove();
+    },2000);
 });
