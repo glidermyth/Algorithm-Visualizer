@@ -4,6 +4,7 @@ const pushBtn = document.querySelector(".push");
 const popBtn = document.querySelector(".pop");
 const topBtn = document.querySelector(".top");
 const generateRandom = document.querySelector(".generate-random");
+const flush = document.querySelector(".flush");
 const isEmptyBtn = document.querySelector(".is-empty");
 const inputField = document.querySelector("#data-field");
 
@@ -132,4 +133,31 @@ generateRandom.addEventListener("click",(event)=>{
     setTimeout(()=>{
         display.lastElementChild.remove();
     },2000);
+});
+
+flush.addEventListener("click",(event)=>{
+    let stackChildrenLength = stack.children.length;
+    if(stackChildrenLength == 0)
+    {
+        let p = document.createElement("p");
+        p.innerText = `Stack has no element🙄🙄`;
+        display.append(p);
+        setTimeout(()=>{
+            display.lastElementChild.remove();
+        },2000);
+    }
+    else{
+        stackArr = [];
+        Top = -1;
+        for(let i=0;i<stackChildrenLength;i++)
+        {
+            stack.firstElementChild.remove();
+        }
+        let p = document.createElement("p");
+        p.innerText = `Stack flushed successfully😊😊😊`;
+        display.append(p);
+        setTimeout(()=>{
+            display.lastElementChild.remove();
+        },2000);
+    }
 });
